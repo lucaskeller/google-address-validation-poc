@@ -24,6 +24,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      NPM_CONFIG_REGISTRY: https://registry.npmjs.org/
+      NPM_CONFIG_ALWAYS_AUTH: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -33,6 +36,13 @@ jobs:
         with:
           node-version: 20
           cache: npm
+
+      - name: Force public registry
+        run: |
+          npm config set registry https://registry.npmjs.org/
+          npm config set always-auth false
+          npm config delete //registry.npmjs.org/:_authToken || true
+          npm config delete _auth || true
 
       - name: Install dependencies
         run: npm ci
