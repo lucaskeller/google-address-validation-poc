@@ -1,0 +1,33 @@
+{
+  "name": "poc-address-validation",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "dev:proxy": "npm-run-all --parallel server dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "server": "node server/index.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.4",
+    "@types/google.maps": "^3.55.11",
+    "@types/react": "^18.3.7",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "jsdom": "^28.1.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.8",
+    "vitest": "^1.6.0"
+  }
+}
